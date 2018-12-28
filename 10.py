@@ -1,26 +1,30 @@
 #!/usr/bin/env python -w
 
 
-
 def next(current):
-    input = str(current)
-    all = []
+    str_current = str(current)
+    grouped = []
     group = []
-    last = input[0]
-    for char in input:
-        print(char, last)
+    last = str_current[0]
+    for char in str_current:
         if char != last:
-            print('New seq')
-            all.append(group[:])
+            grouped.append(group[:])
             group = []
         group.append(char)
         last = char
-    all.append(group)
-    print(all)
+    grouped.append(group)
 
-# Say it outline
+    output = ''
+    for group in grouped:
+        output += f'{len(group)}{group[0]}'
+    return output
+
+# sample of sequence
 # a = [1, 11, 21, 1211, 111221]
-next(111221)
 
+j = 1
+for i in range(30):
+    j = next(j)
+    print(len(j))
 
-# solution:
+# solution: http://www.pythonchallenge.com/pc/return/5808.html

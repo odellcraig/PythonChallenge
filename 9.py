@@ -36,4 +36,5 @@ draw = ImageDraw.Draw(im)
 draw.polygon(first, fill='white', outline='purple')
 draw.polygon(second, fill='white', outline='red')
 im.show()
-# solution:
+# solution: cow -> bull:
+# #

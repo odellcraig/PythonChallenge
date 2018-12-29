@@ -1,33 +1,31 @@
 #!/usr/bin/env python -w
 
+import io
 from PIL import Image
 
-image = Image.open('evil1.jpg')
-print(image)
-print(image.size)
-(x_max, y_max) = image.size
 
+# image = Image.open('evil2.jpg')
+# print(image.mode)
+# print(image)
+# print(image.size)
+# (x_max, y_max) = image.size
 
-ired = Image.new(image.mode, (x_max, y_max))
-iblue = Image.new(image.mode, (x_max, y_max))
-igreen = Image.new(image.mode, (x_max, y_max))
-images = [ired, iblue, igreen]
+# rotated = Image.new(image.mode, (x_max, y_max))
+pixels = [[], [], [], [], []]
 
-red = []
-blue = []
-green = []
-pixels = [red, blue, green]
+with open('evil2.gfx', 'rb') as gfx:
+    bytes = gfx.read()
+    for i, byte in enumerate(bytes):
+        pixels[i % 5].append(byte)
 
-
-for y in range(y_max):
-    for x in range(x_max):
-        for i in range(3):
-            pixel = [0, 0, 0]
-            pixel[i] = image.getpixel((x, y))[i]
-            pixels[i].append(tuple(pixel))
-
-for i in range(3):
-    images[i].putdata(pixels[i])
-    images[i].show()
-# solution: evil
-# http://www.pythonchallenge.com/pc/return/evil.html
+for pixes in pixels:
+    try:
+        image = Image.open(io.BytesIO(bytearray(pixes)))
+        image.show()
+        print(bytearray(pixes[:50]))
+    except:
+        print('Error')
+# Tried to rotate the image in pixels and extract out rpg, then saw it was evil1.jgp
+# evil2.jpg evil2.gfx evil3.jpg evil4.jpg (Says Bert is Evil)
+# http://www.pythonchallenge.com/pc/return/bert.html says bert is evil
+# disproportional  (had to pair together to get this)

@@ -90,3 +90,5 @@ print(code)
 # zzz  zzzzz  zzzz  zzzzz  zzz  zzzzzzzzzz  zzzzzzzzzz  zzzzzzzzzz  zzzz  z
 # zzzz       zzzzzz       zzzz  zzzzzzzzzz  zzzzzzzzzz         zzz  zzzzz  z
 # zzzzzz   zzzzzzzzzz   zzzzzz  zzzzzzzzzz  zzzzzzzzzz          zz  zzzzzz
+
+# http://www.pythonchallenge.com/pc/hex/copper.html

@@ -20,3 +20,4 @@ print(this.s)
 # From the "Zen":
 # In the face of ambiguity, ...
 # The answer is "ambiguity"
+# http://www.pythonchallenge.com/pc/hex/ambiguity.html

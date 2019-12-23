@@ -31,4 +31,4 @@ print(data)
 print(bz2.decompress(data))
 
 
-# http://www.pythonchallenge.com/pc/ring/yankeedoodle.html
+# http://www.pythonchallenge.com/pc/ring/yankeedoodle.html // continuing password: repeat/switch
